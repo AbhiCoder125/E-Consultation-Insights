@@ -2,9 +2,16 @@ import streamlit as st
 
 st.title('Hello World')
 st.write('This is a simple Streamlit app.')
-st.button('Hi I am Abhinag')
-name =st.text_input('Enter your name')
-age = st.text_input('Enter your age')
-goal = st.text_input('Enter your goal')
 
-st.write(f'Hello {name}! You are {age} years old and your goal is {goal}.')
+
+if st.button('Say hello'):
+   st.text('Hello, Streamlit!')
+
+
+name = st.text_input('Please enter your name:')
+if name:
+   st.write(f'Hello, {name}!')
+
+
+if st.file_uploader('Please upload a file:', type=['txt', 'csv']):
+   st.write('Thanks for uploading a file!')
